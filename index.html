@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo">Nikhil Shanmugham</a>
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#resume" class="nav-link">Resume</a>
+            <a href="#projects" class="nav-link">Projects</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello! I'm</h3>
+            <h1>Nikhil Shanmugham</h1>
+            <h3 class="text-animation">
+                I like <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+            </h3>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/nikhils07" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/NikhilS2007" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/nikhil.s07" target="_blank"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- About Section -->
+    <!-- <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/mypicture.jpg" alt="Nikhil Shanmugham">
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I am a senior at Cypress Woods High School who is interested in majoring in computer science and
+                    mathematics. </p>
+                <ul>
+                    <li><strong>Name:</strong> Nikhil Shanmugham</li>
+                    <li><strong>Email:</strong> nikhilschool07@gmail.com</li>
+                    <li><strong>Location:</strong> Cypress, TX</li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/mypicture.jpg" alt="Nikhil Shanmugham">
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I'm a senior at Cypress Woods High School who is passionate about computer science and mathematics. I aim to study at a top-tier university to pursue my interests further.
+                </p>
+                <ul class="about-details">
+                    <li>
+                        <div class="icon-box">
+                            <i class='bx bx-envelope' ></i>
+                        </div>
+                        <div class="info-box">
+                            <p><strong>Email</strong></p>
+                            <p>nikhilschool07@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <i class='bx bx-phone'></i>
+                        </div>
+                        <div class="info-box">
+                            <p><strong>Phone</strong></p>
+                            <p>+1 (832) 847-2276</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <i class='bx bxs-calendar' ></i>                        
+                        </div>
+                        <div class="info-box">
+                            <p><strong>Birthday</strong></p>
+                            <p>July 10, 2007</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <i class='bx bx-map' ></i>                       
+                         </div>
+                        <div class="info-box">
+                            <p><strong>Location</strong></p>
+                            <p>Cypress, TX, USA</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <h2 class="section-title">Resume</h2>
+
+        <!-- Education Section -->
+        <div class="resume-container">
+            <div class="education">
+                <h3>Education</h3>
+
+                <!-- Stanford University -->
+                <div class="resume-item">
+                    <span class="resume-icon"><i class='bx bxs-graduation'></i></span>
+                    <div class="resume-details">
+                        <h4>Stanford University</h4>
+                        <h5>Summer Session</h5>
+                        <span class="resume-date">Jun. 2024 – Aug. 2024</span>
+                        <p><strong>GPA:</strong> 4.0/4.0</p>
+                        <p><strong>Relevant Coursework:</strong></p>
+                        <div class="coursework-grid">
+                            <div class="coursework-item">Programming Abstractions (CS106B)</div>
+                            <div class="coursework-item">Principles of Data Science (DATASCI 112)</div>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- Cypress Woods High School -->
+                <div class="resume-item">
+                    <span class="resume-icon"><i class='bx bxs-graduation'></i></span>
+                    <div class="resume-details">
+                        <h4>Cypress Woods High School</h4>
+                        <h5>High School Diploma</h5>
+                        <span class="resume-date">Aug. 2021 – May 2025</span>
+                        <p><strong>Weighted GPA:</strong> 6.9524/6.0000</p>
+                        <p><strong>Class Rank:</strong> 1 out of 784</p>
+                        <p><strong>Relevant Coursework:</strong></p>
+                        <div class="coursework-grid">
+                            <div class="coursework-item">AP Physics I</div>
+                            <div class="coursework-item">AP Physics II</div>
+                            <div class="coursework-item">AP Physics C</div>
+                            <div class="coursework-item">AP Biology</div>
+                            <div class="coursework-item">AP Statistics</div>
+                            <div class="coursework-item">AP Pre-Calculus</div>
+                            <div class="coursework-item">AP Calculus BC</div>
+                            <div class="coursework-item">AP Human Geography</div>
+                            <div class="coursework-item">AP World History</div>
+                            <div class="coursework-item">AP US History</div>
+                            <div class="coursework-item">AP/DC US Government</div>
+                            <div class="coursework-item">AP/DC Macro Economics</div>
+                            <div class="coursework-item">AP English III</div>
+                            <div class="coursework-item">AP English IV</div>
+                            <div class="coursework-item">Spanish III</div>
+                            <div class="coursework-item">AP Comp Sci Principles</div>
+                            <div class="coursework-item">Comp Sci II</div>
+                            <div class="coursework-item">Comp Sci III</div>
+                            <div class="coursework-item">Comp Sci IV</div>
+                            <div class="coursework-item">Mobile App Development</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Research Internships Section -->
+        <div class="experience">
+            <h3>Research Internships</h3>
+
+            <!-- Quality of Life Technology Laboratory -->
+            <div class="resume-item">
+                <span class="resume-icon"><i class='bx bxs-briefcase'></i></span>
+                <div class="resume-details">
+                    <h4>Quality of Life Technology Laboratory @ The University of Texas at Dallas</h4>
+                    <h5>Research Intern</h5>
+                    <span class="resume-date">Jun. 2023 – Aug. 2023</span>
+                    <ul class="experience-list">
+                        <li>Engineered Large Language Models (LLMs) to analyze electronic health records and medical
+                            images for leukemia prediction, increasing early detection accuracy by 28%.</li>
+                        <li>Developed and trained Convolutional Neural Networks (CNNs) for classifying microscopic blood
+                            images, enhancing image recognition precision.</li>
+                        <li>Integrated TF-IDF vectorization, Natural Language Processing (NLP), and data fusion to
+                            combine text and image data, optimizing predictive models for leukemia diagnosis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Applied-Logic, Programming Languages, and Systems Laboratory -->
+            <div class="resume-item">
+                <span class="resume-icon"><i class='bx bxs-briefcase'></i></span>
+                <div class="resume-details">
+                    <h4>Applied-Logic, Programming Languages, and Systems Laboratory @ The University of Texas at Dallas
+                    </h4>
+                    <h5>Research Intern</h5>
+                    <span class="resume-date">Jun. 2023 - Aug. 2023</span>
+                    <ul class="experience-list">
+                        <li>Developed logic programming models using the s(CASP) system and Fold R++ algorithm,
+                            achieving high-precision data predictions with detailed justifications and structured proof
+                            trees.</li>
+                        <li>Enhanced the Fold R++ algorithm by integrating advanced techniques such as inductive logic
+                            programming and constraint solving, improving prediction accuracy by 8%.</li>
+                        <li>Developed an AI-based Wordle solver by implementing machine learning algorithms like
+                            probabilistic models and n-gram analysis and integrated them with symbolic logic.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pattern Discovery and Machine Learning Laboratory -->
+            <div class="resume-item">
+                <span class="resume-icon"><i class='bx bxs-briefcase'></i></span>
+                <div class="resume-details">
+                    <h4>Pattern Discovery and Machine Learning Laboratory @ The University of Texas at Dallas</h4>
+                    <h5>Research Intern</h5>
+                    <span class="resume-date">Jun. 2022 – Aug. 2022</span>
+                    <ul class="experience-list">
+                        <li>Developed Convolutional Neural Networks (CNNs) for object detection and semantic
+                            segmentation, integrating data from six cameras and LiDAR sensors to create a bird’s eye
+                            view visualization tool.</li>
+                        <li>Applied Deep Q-Networks (DQN) to predict vehicle control actions—steering angle,
+                            acceleration, and braking—in the CARLA Simulator.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Skills Section -->
+        <div class="skills">
+            <h3 class="section-title">Skills</h3>
+            <div class="skills-grid">
+                <!-- Skill Items with Devicons -->
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+                    <p>Java</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                    <p>C++</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+                    <p>C#</p>
+                </div>
+                <div class="skill-item">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" />
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+                    <p>PHP</p>
+                </div>
+                <div class="skill-item">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" />
+                    <p>SQL</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prolog/prolog-original.svg" />
+                    <p>Prolog</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                    <p>React</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" />
+                    <p>Node.js</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                    <p>Git</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                    <p>GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" />
+                    <p>pandas</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
+                    <p>NumPy</p>
+                </div>
+                <div class="skill-item">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" />
+                    <p>Matplotlib</p>
+                </div>
+                <div class="skill-item">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" />
+                    <p>scikit-learn</p>
+                </div>
+                <div class="skill-item">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" />
+                    <p>TensorFlow</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg" />
+                    <p>Keras</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" />
+                    <p>PyTorch</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-item">
+                <i class='bx bx-laptop' ></i>      
+                 <h4>Competition Prep Website</h4>
+                <p class="project-tech">JavaScript &#x2022 SQL &#x2022 PHP &#x2022 HTML/CSS</p>
+                <p class="project-description">
+                    Developed a web application for 50+ CS Club students to practice for UIL competitions. 
+                    Implemented a Java compiler within the site, allowing users to compile and run code through the browser. 
+                    Designed and managed a server-side SQL database to store practice problems and track user submissions
+                </p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item">
+                <i class='bx bx-bot' ></i>
+                <h4>Automated Trading Bots</h4>
+                <p class="project-tech">C#</p>
+                <p class="project-description">
+                    Developed automated trading bots using multi-timeframe strategies, incorporating backtesting and walk-forward testing for performance optimization. 
+                    Achieved consistent profitability with a profit factor above 0.5 through advanced data analysis and risk management techniques.
+                </p>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item">
+                <i class='bx bx-laptop' ></i>      
+                <h4>Personal Portfolio</h4>
+                <p class="project-tech">Javascript &#x2022 HTML/CSS</p>
+                <p class="project-description">
+                    Developed a personal portfolio website to showcase projects and skills with a responsive, user-friendly interface with interactive elements.
+                </p>
+            </div>
+
+            
+        </div>
+    </section>
+
+
+    <!-- Particles JS Script -->
+    <script src="js/particles.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
