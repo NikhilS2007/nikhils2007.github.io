@@ -33,23 +33,18 @@ function typeEffect() {
 document.addEventListener("DOMContentLoaded", typeEffect);
 
 
-// Get all sections that have an ID defined
 const sections = document.querySelectorAll("section[id]");
 
-// Add an event listener listening for scroll
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
-    // Get current scroll position
     let scrollY = window.pageYOffset;
 
-    // Now we loop through sections to get height, top and ID values for each
     sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
     const sectionId = current.getAttribute("id");
 
-    // If our current scroll position enters the space where the section is on screen, add .active class to corresponding nav link, else remove it
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document.querySelector(".navbar a[href*=" + sectionId + "]").classList.add("active");
     } else {
@@ -57,3 +52,28 @@ function navHighlighter() {
     }
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    menuButton.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        const icon = menuButton.querySelector('i');
+        icon.classList.toggle('bx-x'); 
+        icon.classList.toggle('bx-menu'); 
+    });
+
+    // Close navbar when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                const icon = menuButton.querySelector('i');
+                icon.classList.remove('bx-x');
+                icon.classList.add('bx-menu');
+            }
+        });
+    });
+});

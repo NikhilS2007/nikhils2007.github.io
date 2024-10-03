@@ -22,9 +22,8 @@
 }
 
 html {
-    font-size: 50%;
+    font-size: 50%; 
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -44,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 1000; 
 }
 
 .logo {
@@ -57,6 +56,11 @@ body {
 
 .logo:hover {
     color: var(--green-blue);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
 .navbar a {
@@ -74,6 +78,16 @@ body {
     border-bottom: 3px solid var(--green-blue);
 }
 
+/* Menu Button (Hidden on Large Screens) */
+.menu-button {
+    display: none; 
+    background: none;
+    cursor: pointer;
+    font-size: 3rem;
+    color: var(--ice-gray);
+    z-index: 1001; 
+}
+
 /* Home Section */
 .home {
     min-height: 100vh;
@@ -84,6 +98,7 @@ body {
     position: relative;
     z-index: 1;
     flex-direction: column;
+    padding-top: 10rem; 
 }
 
 .home-content h1 {
@@ -141,7 +156,7 @@ body {
     padding: 5rem 0;
     background-color: var(--dark-blue-gray);
     color: var(--ice-gray);
-    /* height: 100vh; */
+    min-height: 100vh;
 }
 
 .about-container {
@@ -237,7 +252,7 @@ body {
     font-weight: bold;
 }
 
-/* Education Section */
+/* Education and Experience Sections */
 .resume-container {
     display: flex;
     flex-direction: column;
@@ -285,6 +300,7 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Single Column for GPA and Class Rank */
 .resume-details p {
     font-size: 1.8rem;
     color: var(--ice-gray);
@@ -368,7 +384,6 @@ body {
     padding: 5rem 10%;
     background-color: var(--dark-blue-gray);
     color: var(--ice-gray);
-    /* height: 100vh; */
 }
 
 .projects-grid {
@@ -400,7 +415,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-
 .project-item h4 {
     font-size: 2.2rem;
     color: var(--white);
@@ -427,11 +441,12 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 0;
 }
 
 /* ================================
    Responsive Styles
-================================ */
+=============================== */
 
 /* Mobile Devices (320px - 480px) */
 @media (max-width: 480px) {
@@ -445,20 +460,28 @@ body {
         font-size: 2.5rem;
     }
 
+    /* Show menu button */
+    .menu-button {
+        display: block;
+    }
+
+    /* Navbar Styling */
     .navbar {
         position: fixed;
-        top: 80px; /* Adjust based on header height */
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100% - 80px);
+        height: 100vh;
         background: var(--dark-blue-gray);
         flex-direction: column;
         align-items: center;
-        justify-content: start;
-        padding-top: 3rem;
+        justify-content: center;
+        padding-top: 5rem; 
         transition: left 0.3s ease;
+        z-index: 999;
     }
 
+    /* When navbar is active (visible) */
     .navbar.active {
         left: 0;
     }
@@ -468,20 +491,11 @@ body {
         font-size: 2.2rem;
     }
 
-    #menu-icon {
-        display: block;
-        font-size: 3rem;
-        color: var(--ice-gray);
-        cursor: pointer;
-    }
-
-    /* Hide the menu icon on larger screens */
-    /* Ensure it's hidden by default */
-    #menu-icon {
-        display: none;
-    }
-
     /* Home Section */
+    .home {
+        padding-top: 12rem; 
+    }
+
     .home-content h1 {
         font-size: 4.5rem;
     }
@@ -629,37 +643,42 @@ body {
         font-size: 2.8rem;
     }
 
+    /* Show menu button */
+    .menu-button {
+        display: block;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--dark-blue-gray);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5rem;
+        transition: left 0.3s ease;
+        z-index: 999; 
+    }
+
+    /* When navbar is active (visible) */
+    .navbar.active {
+        left: 0;
+    }
+
     .navbar a {
         margin: 1.5rem 0;
         font-size: 2rem;
     }
 
-    #menu-icon {
-        display: block;
-        font-size: 2.5rem;
-        color: var(--ice-gray);
-        cursor: pointer;
-    }
-
-    .navbar {
-        position: fixed;
-        top: 80px; /* Adjust based on header height */
-        left: -100%;
-        width: 100%;
-        height: calc(100% - 80px);
-        background: var(--dark-blue-gray);
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        padding-top: 3rem;
-        transition: left 0.3s ease;
-    }
-
-    .navbar.active {
-        left: 0;
-    }
-
     /* Home Section */
+    .home {
+        padding-top: 12rem; 
+    }
+
     .home-content h1 {
         font-size: 5.5rem;
     }
@@ -692,21 +711,25 @@ body {
         font-size: 4.5rem;
     }
 
+    .about-content p {
+        font-size: 2.2rem;
+    }
+
     .about-details li {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-    
-    .about-content p {
-        font-size: 2.2rem;
     }
 
     .icon-box {
         margin-right: 0;
         margin-bottom: 1rem;
     }
-    
+
+    .info-box p {
+        font-size: 2rem;
+    }
+
     /* Resume Section */
     .section-title {
         font-size: 5rem;
@@ -791,8 +814,54 @@ body {
     }
 }
 
-/* Larger Devices (769px and above) */
-/* No changes needed as base styles handle larger screens */
+/* ================================
+   Additional Responsive Styles for 769px to 915px
+=============================== */
+
+/* Vertical Layout for About Section between 769px and 915px */
+@media (min-width: 769px) and (max-width: 930px) {
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .about-image img {
+        height: 60rem;
+    }
+
+    .about-content h2 {
+        font-size: 4.5rem;
+    }
+
+    .about-content p {
+        font-size: 2.2rem;
+    }
+
+    .about-details li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icon-box {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .info-box p {
+        font-size: 2rem;
+    }
+}
+
+/* ================================
+   Final Adjustments
+=============================== */
 
 /* Make all images responsive */
 img {
@@ -805,68 +874,30 @@ img {
     width: 100%;
 }
 
-/* Hide navbar links on small screens */
+/* ================================
+   Navbar Toggle Animations
+=============================== */
+
+/* Smooth transition for navbar */
 .navbar {
-    display: flex;
+    transition: left 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: var(--dark-blue-gray);
-        padding-top: 5rem;
-        transition: left 0.3s ease;
-    }
-
-    .navbar.active {
-        left: 0;
-    }
-
-    .navbar a {
-        font-size: 2.5rem;
-        margin: 2rem 0;
-    }
+/* Menu Icon Transform when Active */
+.bx-x {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
 }
 
-/* Menu icon styling */
-#menu-icon {
-    display: none; /* Hidden on larger screens */
-}
-
-@media (max-width: 768px) {
-    #menu-icon {
-        display: block;
-    }
-}
-
-/* Base font-size for scalability */
-html {
-    font-size: 50%; /* 1rem = 8px */
-}
-
-@media (max-width: 768px) {
-    html {
-        font-size: 40%; /* 1rem = 6.4px */
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        font-size: 35%; /* 1rem = 5.6px */
-    }
-}
+/* ================================
+   Accessibility Enhancements
+=============================== */
 
 /* Increase clickable areas */
 .navbar a, .social-icons a, .project-item, .skill-item {
     padding: 0.5rem 1rem;
 }
 
-#menu-icon {
+.menu-button {
     padding: 0.5rem;
 }
