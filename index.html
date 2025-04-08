@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+        }
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transform: translateX(100%);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .mobile-menu.show {
+                transform: translateX(0);
+            }
+            .mobile-menu-backdrop {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease;
+            }
+            .mobile-menu-backdrop.show {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+  </head>
+<body class="bg-white dark:bg-black text-gray-800 dark:text-gray-200 transition-colors duration-200 antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
+        <div class="max-w-5xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Left: Name -->
+                <div class="w-32 md:w-40">
+                    <h1 class="text-2xl font-medium tracking-tight">Nikhil<span class="text-red-500">.</span></h1>
+                </div>
+
+                <!-- Middle: Navigation (Hidden on mobile) -->
+                <nav class="hidden md:block flex-1">
+                    <ul class="flex justify-center space-x-8">
+                        <li>
+                            <a href="#about" class="relative px-1 py-1.5 inline-block text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 group text-sm font-medium">
+                                About
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#education" class="relative px-1 py-1.5 inline-block text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 group text-sm font-medium">
+                                Education
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#experience" class="relative px-1 py-1.5 inline-block text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 group text-sm font-medium">
+                                Experience
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="relative px-1 py-1.5 inline-block text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 group text-sm font-medium">
+                                Projects
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Right: Theme Toggle and Menu Button -->
+                <div class="w-32 md:w-40 flex justify-end items-center space-x-4">
+                    <button id="themeToggle" class="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                        <svg class="w-6 h-6 dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="w-6 h-6 hidden dark:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <button id="menuButton" class="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobileMenuBackdrop" class="mobile-menu-backdrop fixed inset-0 bg-black/20 dark:bg-white/10 backdrop-blur-sm z-40 md:hidden"></div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-lg z-50 md:hidden">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">Menu</h3>
+                    <button id="closeMenu" class="p-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <nav>
+                    <ul class="space-y-6">
+                        <li>
+                            <a href="#about" class="mobile-link block py-2 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-black dark:hover:text-white transition-colors duration-200">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#education" class="mobile-link block py-2 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-black dark:hover:text-white transition-colors duration-200">
+                                Education
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#experience" class="mobile-link block py-2 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-black dark:hover:text-white transition-colors duration-200">
+                                Experience
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="mobile-link block py-2 text-base font-medium text-gray-800 dark:text-gray-100 hover:text-black dark:hover:text-white transition-colors duration-200">
+                                Projects
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6">
+        <!-- About Section -->
+        <section id="about" class="flex items-center justify-center py-12 md:py-16">
+            <div class="max-w-3xl text-center px-4">
+                <img src="profile.jpg" alt="Profile" class="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6">
+                <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Nikhil Shanmugham</h2>
+                <p class="text-base md:text-lg text-gray-500 dark:text-gray-400 mb-6 font-medium">Computer Science @ The University of Texas at Austin</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto text-sm md:text-base px-4">
+                    Intro about me.
+                </p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-100 dark:border-gray-800"></div>
+
+        <!-- Education Section -->
+        <section id="education" class="py-16">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+                <h2 class="text-xl md:text-2xl font-semibold tracking-tight mb-4 md:mb-0">Education</h2>
+                <button class="section-expand-all group inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white font-medium transition-colors duration-200">
+                    <span class="relative expand-text">Expand all</span>
+                    <div class="arrows-container flex flex-col -space-y-2.5 transition-transform duration-300">
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="space-y-8">
+                <div class="education-item group">
+                    <div class="flex flex-col md:flex-row md:items-start md:gap-6">
+                        <img src="ut-logo.png" alt="UT" class="hidden md:block w-12 h-12 rounded-lg md:mt-1">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-medium tracking-tight">The University of Texas at Austin</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-base font-medium">B.S. Computer Science</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Aug. 2025 - May 2029</p>
+                            <div class="education-content hidden mt-4 text-gray-500 dark:text-gray-400">
+                                <ul class="list-disc list-inside space-y-1 ml-0 md:ml-4 text-sm md:text-base">
+                                    <li>Coursework: </li>
+                                    <li>Clubs: </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-100 dark:border-gray-800"></div>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+                <h2 class="text-xl md:text-2xl font-semibold tracking-tight mb-4 md:mb-0">Experience</h2>
+                <button class="section-expand-all group inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white font-medium transition-colors duration-200">
+                    <span class="relative expand-text">Expand all</span>
+                    <div class="arrows-container flex flex-col -space-y-2.5 transition-transform duration-300">
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="space-y-8">
+                <!-- Experience Items -->
+                <div class="experience-item group">
+                    <div class="flex flex-col md:flex-row md:items-start md:gap-6">
+                        <img src="utd-logo.png" alt="UTD" class="hidden md:block w-12 h-12 rounded-lg md:mt-1">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-medium tracking-tight">Research Intern</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-base font-medium">The University of Texas at Dallas</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Jun. 2023 - Aug. 2023</p>
+                            <div class="experience-content hidden mt-4 text-gray-500 dark:text-gray-400">
+                                <ul class="list-disc list-inside space-y-1 ml-0 md:ml-4 text-sm md:text-base">
+                                    <li>Achievement or responsibility 1</li>
+                                    <li>Achievement or responsibility 2</li>
+                                    <li>Achievement or responsibility 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-item group">
+                    <div class="flex flex-col md:flex-row md:items-start md:gap-6">
+                        <img src="utd-logo.png" alt="UTD" class="hidden md:block w-12 h-12 rounded-lg md:mt-1">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-medium tracking-tight">Research Intern</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-base font-medium">The University of Texas at Dallas</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Jun. 2023 - Aug. 2023</p>
+                            <div class="experience-content hidden mt-4 text-gray-500 dark:text-gray-400">
+                                <ul class="list-disc list-inside space-y-1 ml-0 md:ml-4 text-sm md:text-base">
+                                  <li>Achievement or responsibility 1</li>
+                                  <li>Achievement or responsibility 2</li>
+                                  <li>Achievement or responsibility 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-100 dark:border-gray-800"></div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+                <h2 class="text-xl md:text-2xl font-semibold tracking-tight mb-4 md:mb-0">Projects</h2>
+                <button class="section-expand-all group inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white font-medium transition-colors duration-200">
+                    <span class="relative expand-text">Expand all</span>
+                    <div class="arrows-container flex flex-col -space-y-2.5 transition-transform duration-300">
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                        <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="space-y-8">
+                <div class="project-item group">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-medium tracking-tight">Project Name</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-base font-medium">Python, PyTorch</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Sep 2024 - Dec 2024</p>
+                        <div class="project-content hidden mt-4 text-gray-500 dark:text-gray-400">
+                            <ul class="list-disc list-inside space-y-1 ml-4 text-base">
+                                <li>Project achievement or detail 1</li>
+                                <li>Project achievement or detail 2</li>
+                                <li>Project achievement or detail 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Set initial theme
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+
+        // Section expand/collapse functionality
+        document.querySelectorAll('.section-expand-all').forEach(button => {
+            let isExpanded = false;
+            
+            button.addEventListener('click', () => {
+                const section = button.closest('section');
+                const contents = section.querySelectorAll('.experience-content, .education-content, .project-content');
+                const arrowsContainer = button.querySelector('.arrows-container');
+                const expandText = button.querySelector('.expand-text');
+                
+                isExpanded = !isExpanded;
+                expandText.textContent = isExpanded ? 'Collapse all' : 'Expand all';
+                
+                // Rotate arrows instead of hiding them
+                arrowsContainer.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0)';
+                
+                contents.forEach(content => {
+                    content.classList.toggle('hidden');
+                });
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu functionality
+        const menuButton = document.getElementById('menuButton');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('show');
+            mobileMenuBackdrop.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('show');
+            mobileMenuBackdrop.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        menuButton.addEventListener('click', openMobileMenu);
+        closeMenu.addEventListener('click', closeMobileMenu);
+        mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('show') && 
+                !mobileMenu.contains(e.target) && 
+                !menuButton.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+  </body>
+</html>
