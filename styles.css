@@ -90,6 +90,39 @@ body::-webkit-scrollbar-thumb {
         position: relative;
     }
     
+    /* Make header match main page size */
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .dark header {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    header .max-w-5xl {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    /* Add padding to main content to account for fixed header */
+    main {
+        padding-top: 5rem !important;
+    }
+    
+    /* Ensure body doesn't scroll behind header */
+    body {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
     .mobile-menu {
         transform: translateX(100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,7 +135,7 @@ body::-webkit-scrollbar-thumb {
         bottom: 0 !important;
         position: fixed;
         overflow: hidden;
-        z-index: 50;
+        z-index: 90;
         visibility: hidden;
     }
 
@@ -136,10 +169,60 @@ body::-webkit-scrollbar-thumb {
         visibility: visible;
     }
 
+    .mobile-menu > div {
+        background: inherit;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding-top: 0.5rem;
+    }
+
+    .mobile-menu .flex-1 {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0;
+    }
+
+    .mobile-menu nav {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .mobile-menu ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        background: inherit;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu li {
+        background: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .mobile-link {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem 1rem;
         text-align: center;
-        padding: 1.5rem 0;
+        width: 100%;
         background: transparent !important;
     }
 
@@ -161,30 +244,6 @@ body::-webkit-scrollbar-thumb {
 
     .mobile-link:hover::before {
         width: 80px;
-    }
-
-    .mobile-menu ul {
-        background: inherit;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    .mobile-menu li {
-        background: inherit;
-    }
-
-    .mobile-menu > div {
-        background: inherit;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    .mobile-menu .flex-1 {
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow-y: auto;
     }
 
     /* Prevent horizontal scrolling when menu is open */
