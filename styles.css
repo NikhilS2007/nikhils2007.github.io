@@ -64,6 +64,23 @@ body::-webkit-scrollbar-thumb {
     background-color: #525252;
 }
 
+/* Reduce font size for bullet points */
+.education-content ul,
+.experience-content ul,
+.project-content ul {
+    font-size: 0.9rem;
+    list-style-position: outside;
+    padding-left: 0.875rem;
+    margin-left: 0;
+}
+
+.education-content li,
+.experience-content li,
+.project-content li {
+    padding-left: 0.0625rem;
+    text-indent: -0.0625rem;
+}
+
 /* Expand/Collapse Animations */
 .experience-content, .education-content, .project-content {
     max-height: 0;
