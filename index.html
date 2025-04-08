@@ -41,93 +41,6 @@
             }
         }
     </script>
-    <style>
-        body {
-            font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-        }
-        .experience-content, .education-content, .project-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-            opacity: 0;
-        }
-        .experience-content.show, .education-content.show, .project-content.show {
-            max-height: 500px;
-            opacity: 1;
-        }
-        .arrows-container {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        @media (max-width: 768px) {
-            .mobile-menu {
-                transform: translateX(100%);
-                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                background: #ffffff;
-                width: 100vw !important;
-                height: 100vh !important;
-                left: 0 !important;
-                right: 0 !important;
-                top: 0 !important;
-                bottom: 0 !important;
-            }
-            .dark .mobile-menu {
-                background: #000000;
-            }
-            .mobile-menu.show {
-                transform: translateX(0);
-            }
-            .mobile-menu-backdrop {
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.3s ease;
-                background: rgba(255, 255, 255, 0.4);
-                width: 100vw !important;
-                height: 100vh !important;
-            }
-            .dark .mobile-menu-backdrop {
-                background: rgba(0, 0, 0, 0.4);
-            }
-            .mobile-menu-backdrop.show {
-                opacity: 1;
-                visibility: visible;
-            }
-            .mobile-link {
-                position: relative;
-                text-align: center;
-                padding: 1.5rem 0;
-                background: transparent !important;
-            }
-            .mobile-link::before {
-                content: '';
-                position: absolute;
-                left: 50%;
-                bottom: 0;
-                transform: translateX(-50%);
-                width: 40px;
-                height: 2px;
-                background: #000000;
-                transition: width 0.2s ease;
-            }
-            .dark .mobile-link::before {
-                background: #ffffff;
-            }
-            .mobile-link:hover::before {
-                width: 80px;
-            }
-            .mobile-menu nav {
-                background: inherit;
-            }
-            .mobile-menu ul {
-                background: inherit;
-            }
-            .mobile-menu li {
-                background: inherit;
-            }
-            .mobile-menu > div {
-                background: inherit;
-            }
-        }
-    </style>
   </head>
 <body class="bg-white dark:bg-black text-gray-800 dark:text-gray-200 transition-colors duration-200 antialiased">
     <!-- Header -->
@@ -193,8 +106,8 @@
 
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-full h-full shadow-lg z-50 md:hidden">
-            <div class="p-8 h-full flex flex-col">
-                <div class="flex justify-between items-center mb-16">
+            <div class="h-full flex flex-col">
+                <div class="flex justify-between items-center p-6 border-b border-gray-100 dark:border-gray-800">
                     <h3 class="text-2xl font-medium">Menu</h3>
                     <button id="closeMenu" class="p-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                         <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -202,8 +115,8 @@
                         </svg>
                     </button>
                 </div>
-                <nav class="flex-1 flex items-center justify-center">
-                    <ul class="space-y-12 w-full">
+                <nav class="flex-1 overflow-y-auto pt-4">
+                    <ul class="w-full px-6 space-y-8">
                         <li>
                             <a href="#about" class="mobile-link block text-xl font-medium text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
                                 About
@@ -503,6 +416,38 @@
             html.classList.add('dark');
         }
 
+        // Mobile menu functionality
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuButton = document.getElementById('menuButton');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
+        let scrollPosition = 0;
+
+        function openMenu() {
+            scrollPosition = window.pageYOffset;
+            mobileMenu.classList.add('show');
+            mobileMenuBackdrop.classList.add('show');
+            document.body.classList.add('menu-open');
+            document.body.style.top = `-${scrollPosition}px`;
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('show');
+            mobileMenuBackdrop.classList.remove('show');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        mobileMenuBackdrop.addEventListener('click', closeMenu);
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
         // Section expand/collapse functionality
         document.querySelectorAll('.section-expand-all').forEach(button => {
             let isExpanded = false;
@@ -545,42 +490,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Mobile menu functionality
-        const menuButton = document.getElementById('menuButton');
-        const closeMenu = document.getElementById('closeMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        function openMobileMenu() {
-            mobileMenu.classList.add('show');
-            mobileMenuBackdrop.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('show');
-            mobileMenuBackdrop.classList.remove('show');
-            document.body.style.overflow = '';
-        }
-
-        menuButton.addEventListener('click', openMobileMenu);
-        closeMenu.addEventListener('click', closeMobileMenu);
-        mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (mobileMenu.classList.contains('show') && 
-                !mobileMenu.contains(e.target) && 
-                !menuButton.contains(e.target)) {
-                closeMobileMenu();
-            }
         });
     </script>
   </body>
