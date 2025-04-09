@@ -2,66 +2,78 @@ body {
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
 }
 
-/* Main page scrollbar */
-body {
-    scrollbar-width: thin;
-    scrollbar-color: #a3a3a3 #f5f5f5;
+/* Main page scrollbar (Light Mode) */
+html, body {
+    scrollbar-width: thin !important;
+    scrollbar-color: #a3a3a3 #f5f5f5 !important;
 }
 
-.dark body {
-    scrollbar-color: #525252 #171717;
+/* Main page scrollbar (Dark Mode) */
+html.dark, body.dark {
+    scrollbar-color: #525252 #171717 !important;
 }
 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    width: 8px;
+    width: 8px !important;
 }
 
+html::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
-    background: #f5f5f5;
+    background: #f5f5f5 !important;
 }
 
-.dark body::-webkit-scrollbar-track {
-    background: #171717;
+/* Dark mode for WebKit scrollbar track */
+html.dark::-webkit-scrollbar-track,
+body.dark::-webkit-scrollbar-track {
+    background: #171717 !important;
 }
 
+html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-    background-color: #a3a3a3;
-    border-radius: 4px;
+    background-color: #a3a3a3 !important;
+    border-radius: 4px !important;
 }
 
-.dark body::-webkit-scrollbar-thumb {
-    background-color: #525252;
+/* Dark mode for WebKit scrollbar thumb */
+html.dark::-webkit-scrollbar-thumb,
+body.dark::-webkit-scrollbar-thumb {
+    background-color: #525252 !important;
 }
 
-/* Mobile menu scrollbar */
+/* Mobile menu scrollbar (Light Mode) */
 .mobile-menu nav {
-    scrollbar-width: thin;
-    scrollbar-color: #a3a3a3 #f5f5f5;
+    scrollbar-width: thin !important;
+    scrollbar-color: #a3a3a3 #f5f5f5 !important;
 }
 
-.dark .mobile-menu nav {
-    scrollbar-color: #525252 #171717;
+/* Mobile menu scrollbar (Dark Mode) */
+html.dark .mobile-menu nav,
+body.dark .mobile-menu nav {
+    scrollbar-color: #525252 #171717 !important;
 }
 
 .mobile-menu nav::-webkit-scrollbar {
-    width: 8px;
+    width: 8px !important;
 }
 
 .mobile-menu nav::-webkit-scrollbar-track {
-    background: #f5f5f5;
+    background: #f5f5f5 !important;
 }
 
-.dark .mobile-menu nav::-webkit-scrollbar-track {
-    background: #171717;
+html.dark .mobile-menu nav::-webkit-scrollbar-track,
+body.dark .mobile-menu nav::-webkit-scrollbar-track {
+    background: #171717 !important;
 }
 
 .mobile-menu nav::-webkit-scrollbar-thumb {
-    background-color: #a3a3a3;
-    border-radius: 4px;
+    background-color: #a3a3a3 !important;
+    border-radius: 4px !important;
 }
 
-.dark .mobile-menu nav::-webkit-scrollbar-thumb {
-    background-color: #525252;
+html.dark .mobile-menu nav::-webkit-scrollbar-thumb,
+body.dark .mobile-menu nav::-webkit-scrollbar-thumb {
+    background-color: #525252 !important;
 }
 
 /* Reduce font size for bullet points */
@@ -120,7 +132,8 @@ body::-webkit-scrollbar-thumb {
         -webkit-backdrop-filter: blur(8px);
     }
     
-    .dark header {
+    html.dark header,
+    body.dark header {
         background: rgba(0, 0, 0, 0.8);
     }
     
@@ -156,7 +169,8 @@ body::-webkit-scrollbar-thumb {
         visibility: hidden;
     }
 
-    .dark .mobile-menu {
+    html.dark .mobile-menu,
+    body.dark .mobile-menu {
         background: #000000;
     }
 
@@ -177,7 +191,8 @@ body::-webkit-scrollbar-thumb {
         z-index: 40;
     }
 
-    .dark .mobile-menu-backdrop {
+    html.dark .mobile-menu-backdrop,
+    body.dark .mobile-menu-backdrop {
         background: rgba(0, 0, 0, 0.4);
     }
 
@@ -236,7 +251,8 @@ body::-webkit-scrollbar-thumb {
         transition: width 0.2s ease;
     }
 
-    .dark .mobile-link::before {
+    html.dark .mobile-link::before,
+    body.dark .mobile-link::before {
         background: #ffffff;
     }
 
@@ -251,4 +267,4 @@ body::-webkit-scrollbar-thumb {
         width: 100%;
         height: 100%;
     }
-} 
+}
