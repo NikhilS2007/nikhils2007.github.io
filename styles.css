@@ -79,7 +79,8 @@ body.dark .mobile-menu nav::-webkit-scrollbar-thumb {
 /* Reduce font size for bullet points */
 .education-content ul,
 .experience-content ul,
-.project-content ul {
+.project-content ul,
+.event-content ul {
     font-size: 0.9rem;
     list-style-position: outside;
     padding-left: 0.875rem;
@@ -88,20 +89,21 @@ body.dark .mobile-menu nav::-webkit-scrollbar-thumb {
 
 .education-content li,
 .experience-content li,
-.project-content li {
+.project-content li,
+.event-content li {
     padding-left: 0.0625rem;
     text-indent: -0.0625rem;
 }
 
 /* Expand/Collapse Animations */
-.experience-content, .education-content, .project-content {
+.experience-content, .education-content, .project-content, .event-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     opacity: 0;
 }
 
-.experience-content.show, .education-content.show, .project-content.show {
+.experience-content.show, .education-content.show, .project-content.show, .event-content.show {
     max-height: 500px;
     opacity: 1;
 }
